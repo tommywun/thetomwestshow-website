@@ -1,0 +1,9 @@
+# Secrets
+.secrets/vault.json
+.secrets/vault.enc
+
+# Large source images
+images/originals/
+
+# OS
+.DS_Store
