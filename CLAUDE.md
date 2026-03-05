@@ -50,9 +50,10 @@ thetomwestshow-website/
 ├── .secrets/                  ← Vault encrypt/decrypt scripts only
 ├── css/
 │   ├── main.css               ← Global styles
-│   └── videos.css             ← Videos page styles (pastel-punk theme)
+│   └── videos.css             ← Videos page styles (magazine editorial)
 ├── fonts/
-│   └── bangers-v25-latin-regular.woff2  ← Self-hosted display font
+│   ├── playfair-display-v40-latin-regular.woff2  ← Serif display font
+│   └── playfair-display-v40-latin-700.woff2      ← Serif display font (bold)
 ├── js/                        ← Scripts (when needed)
 ├── images/                    ← Web-optimized images
 └── pages/

@@ -1,12 +1,29 @@
 /* ==========================================================
    Videos Page — The Tom West Show
-   Simple, elegant, tight grid with pencil-sketch nods
+   Print magazine aesthetic: serif type, white space, editorial grid
    ========================================================== */
+
+/* ---- Fonts ---- */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display-v40-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display-v40-latin-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* ---- Page Body ---- */
 body.page-videos {
-  background-color: #fff;
-  color: #333;
+  background: #fff;
+  color: #1a1a1a;
   display: block;
   align-items: initial;
   justify-content: initial;
@@ -14,150 +31,172 @@ body.page-videos {
   min-height: auto;
 }
 
+/* ---- Container ---- */
+.magazine {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
 /* ---- Navigation ---- */
 .site-nav {
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 2rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .site-nav a {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #888;
   text-decoration: none;
-  letter-spacing: 0.03em;
   transition: color 0.2s;
 }
 
 .site-nav a:hover,
 .site-nav a:focus {
-  color: #111;
+  color: #1a1a1a;
 }
 
 .site-nav a[aria-current="page"] {
-  color: #111;
-  border-bottom: 1px solid #111;
+  color: #1a1a1a;
 }
 
-/* ---- Hero / Page Title ---- */
-.hero {
-  text-align: center;
-  padding: 2.5rem 1.5rem 1rem;
+/* ---- Page Header ---- */
+.page-header {
+  padding: 3rem 0 1.5rem;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 2.5rem;
+}
+
+.page-header .label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #999;
+  margin-bottom: 0.4rem;
 }
 
 .page-title {
-  font-size: 1.6rem;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: #222;
-  margin-bottom: 0.3rem;
-}
-
-.hero .subtitle {
-  font-size: 0.9rem;
-  color: #999;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   margin: 0;
-  font-style: italic;
 }
 
-/* ---- Video Grid ---- */
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  padding: 1.5rem 1.5rem 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+/* ---- Hero Video ---- */
+.video-hero {
+  margin-bottom: 2.5rem;
 }
 
-@media (min-width: 640px) {
-  .video-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
-  }
-}
-
-@media (min-width: 960px) {
-  .video-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.2rem;
-    padding: 1.5rem 2rem 3rem;
-  }
-}
-
-/* ---- Video Card ---- */
-.video-card {
-  background: #fff;
-  border-radius: 3px;
-  overflow: hidden;
-  border: 1px solid #e0ddd8;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.video-card:hover,
-.video-card:focus-within {
-  border-color: #bbb;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-/* ---- Card Link ---- */
-.video-link {
+.video-hero .video-link {
   display: block;
   text-decoration: none;
   color: inherit;
 }
 
-.video-link:focus {
-  outline: 2px solid #999;
-  outline-offset: 1px;
-  border-radius: 3px;
+.video-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
-/* ---- Card Image ---- */
-.video-card figure {
-  margin: 0;
-  overflow: hidden;
-  border-bottom: 1px solid #eee;
+.video-hero .video-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-top: 0.8rem;
+  line-height: 1.3;
+}
+
+/* ---- Section Divider ---- */
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 0 2.5rem;
+}
+
+/* ---- Video Grid ---- */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 580px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media (min-width: 860px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 1.5rem;
+  }
+}
+
+/* ---- Video Card ---- */
+.video-card {
+  position: relative;
+}
+
+.video-card .video-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-card .video-link:focus {
+  outline: 2px solid #888;
+  outline-offset: 4px;
 }
 
 .video-card img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 480 / 360;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-/* ---- Card Title ---- */
-.video-title {
-  font-size: 0.78rem;
+.video-card .video-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 0.9rem;
   font-weight: 400;
-  padding: 0.5rem 0.6rem;
+  color: #333;
+  margin-top: 0.5rem;
   line-height: 1.35;
-  color: #444;
 }
 
 /* ---- Footer ---- */
 .site-footer {
   text-align: center;
-  padding: 1.5rem 1.5rem 2rem;
+  padding: 3rem 2rem 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ddd;
   color: #bbb;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .site-footer a {
   color: #999;
+  text-decoration: none;
 }
 
 .site-footer a:hover {
-  color: #555;
-}
-
-/* ---- Pencil-sketch nod: thin dashed separator ---- */
-.hero {
-  border-bottom: 1px dashed #d5d0c8;
-  margin: 0 1.5rem;
-  padding-left: 0;
-  padding-right: 0;
+  color: #1a1a1a;
 }
