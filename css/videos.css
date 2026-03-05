@@ -1,0 +1,214 @@
+/* ==========================================================
+   Videos Page — The Tom West Show
+   Pastel-punk: children's book illustration meets playful energy
+   ========================================================== */
+
+/* ---- Font ---- */
+@font-face {
+  font-family: 'Bangers';
+  src: url('/fonts/bangers-v25-latin-regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---- Page Body ---- */
+body.page-videos {
+  background-color: #FFF8F0;
+  background-image: radial-gradient(#F0E4E6 0.8px, transparent 0.8px);
+  background-size: 16px 16px;
+  color: #2D2040;
+  display: block;
+  align-items: initial;
+  justify-content: initial;
+  text-align: left;
+  min-height: auto;
+}
+
+/* ---- Navigation ---- */
+.site-nav {
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.site-nav a {
+  font-family: 'Bangers', cursive;
+  font-size: 1.3rem;
+  color: #2D2040;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: #E06B75;
+}
+
+.site-nav a[aria-current="page"] {
+  color: #E06B75;
+  border-bottom: 2px solid #E06B75;
+}
+
+/* ---- Hero / Page Title ---- */
+.hero {
+  text-align: center;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.page-title {
+  font-family: 'Bangers', cursive;
+  font-size: 4rem;
+  letter-spacing: 0.05em;
+  color: #2D2040;
+  text-shadow:
+    3px 3px 0 #E06B75,
+    -2px -2px 0 #5CBDB9;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.hero .subtitle {
+  font-size: 1.15rem;
+  color: #7A6B8A;
+  margin: 0;
+}
+
+/* ---- Video Grid ---- */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem 1.5rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (min-width: 960px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    padding: 2rem 2rem 4rem;
+  }
+}
+
+/* ---- Video Card ---- */
+.video-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2.5px solid #F4A5AE;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.video-card:nth-child(odd) {
+  transform: rotate(-0.8deg);
+}
+
+.video-card:nth-child(even) {
+  transform: rotate(0.6deg);
+}
+
+/* Cycling pastel border colors */
+.video-card:nth-child(4n+1) { border-color: #F4A5AE; }
+.video-card:nth-child(4n+2) { border-color: #A8D8C8; }
+.video-card:nth-child(4n+3) { border-color: #F7D5B0; }
+.video-card:nth-child(4n+4) { border-color: #C9B1E8; }
+
+/* Hover: straighten, lift, pastel dual-shadow */
+.video-card:hover,
+.video-card:focus-within {
+  transform: rotate(0deg) scale(1.03);
+  box-shadow:
+    4px 4px 0 #E06B75,
+    -3px -3px 0 #5CBDB9;
+  z-index: 1;
+}
+
+/* ---- Card Link ---- */
+.video-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.video-link:focus {
+  outline: 3px solid #5CBDB9;
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+/* ---- Card Image ---- */
+.video-card figure {
+  margin: 0;
+  overflow: hidden;
+}
+
+.video-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 480 / 360;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ---- Card Title ---- */
+.video-title {
+  font-family: 'Bangers', cursive;
+  font-size: 1.15rem;
+  padding: 0.75rem 1rem;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  color: #2D2040;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem 2.5rem;
+  color: #7A6B8A;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: #5CBDB9;
+}
+
+.site-footer a:hover {
+  color: #E06B75;
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .video-card,
+  .video-card:nth-child(odd),
+  .video-card:nth-child(even) {
+    transform: none;
+    transition: none;
+  }
+  .video-card:hover,
+  .video-card:focus-within {
+    transform: none;
+  }
+  .video-card img {
+    transition: none;
+  }
+  .video-card:hover img {
+    transform: none;
+  }
+}

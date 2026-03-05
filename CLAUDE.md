@@ -49,12 +49,15 @@ thetomwestshow-website/
 ├── .gitignore
 ├── .secrets/                  ← Vault encrypt/decrypt scripts only
 ├── css/
-│   └── main.css               ← Global styles
+│   ├── main.css               ← Global styles
+│   └── videos.css             ← Videos page styles (pastel-punk theme)
+├── fonts/
+│   └── bangers-v25-latin-regular.woff2  ← Self-hosted display font
 ├── js/                        ← Scripts (when needed)
 ├── images/                    ← Web-optimized images
 └── pages/
-    └── about/
-        └── index.html         ← /about/ page (directory-based routing)
+    └── videos/
+        └── index.html         ← /pages/videos/ — YouTube video gallery
 ```
 
 ## Routing convention
@@ -105,7 +108,7 @@ Set via Cloudflare Transform Rule AND `<meta>` tag in every HTML file (belt and 
 
 **Base CSP** (update as services are added):
 ```
-default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://i.ytimg.com; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
 ```
 
 **When adding a third-party service**, update CSP in BOTH locations:
@@ -122,7 +125,7 @@ Any external script or stylesheet from a CDN MUST include:
 ### Third-party services registry
 | Service | Purpose | CSP additions | SRI? | Date added |
 |---------|---------|---------------|------|------------|
-| (none yet) | | | | |
+| YouTube thumbnails (i.ytimg.com) | Video thumbnail images on /pages/videos/ | img-src https://i.ytimg.com | N/A (images) | 2026-03-05 |
 
 **When adding any third-party service, Claude Code MUST:**
 1. Ask Tom: "Do you trust this provider? They will be able to track visitors."

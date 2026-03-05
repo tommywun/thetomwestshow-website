@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://i.ytimg.com; font-src 'self'; connect-src 'self'; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <title>The Tom West Show</title>
   <meta name="description" content="The Tom West Show — videos, stories, and projects from Tom West.">
   <link rel="canonical" href="https://thetomwestshow.com/">
@@ -14,9 +14,16 @@
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="The Tom West Show">
   <meta name="twitter:description" content="Videos, stories, and projects from Tom West.">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/videos.css">
 </head>
 <body>
+  <header>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/pages/videos/">Videos</a>
+    </nav>
+  </header>
   <main>
     <div class="container">
       <h1>The Tom West Show</h1>
