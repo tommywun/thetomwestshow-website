@@ -20,6 +20,27 @@
   font-display: swap;
 }
 
+/* ---- Home Page ---- */
+body.page-home {
+  background: #fff;
+  color: #1a1a1a;
+}
+
+.home-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+@media (min-width: 640px) {
+  .home-title {
+    font-size: 6rem;
+  }
+}
+
 /* ---- Page Body ---- */
 body.page-videos {
   background: #fff;
